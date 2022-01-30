@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Tabela({ podaci, upravljackePromenljive }) {
+export default function Tabela({ podaci, upravljackePromenljive, addGreska }) {
   const nizNazivaPromenljivih = Object.keys(upravljackePromenljive)
   return (
     <table className='table'>
@@ -21,6 +21,8 @@ export default function Tabela({ podaci, upravljackePromenljive }) {
       <tbody>
         {
           Object.keys(podaci).map(resurs => {
+            const ukupno = nizNazivaPromenljivih.reduce((acc, key) => { return acc + upravljackePromenljive[key] * podaci[resurs].jedinicneVrednosti[key] }, 0)
+            addGreska(resurs, ukupno, podaci[resurs].kapacitet);
             return (
               <tr key={resurs}>
                 <td>{resurs}</td>
@@ -31,7 +33,7 @@ export default function Tabela({ podaci, upravljackePromenljive }) {
                     )
                   })
                 }
-                <td>{nizNazivaPromenljivih.reduce((acc, key) => { return acc + upravljackePromenljive[key] * podaci[resurs].jedinicneVrednosti[key] }, 0)}</td>
+                <td className={ukupno > podaci[resurs].kapacitet ? 'text-danger' : ''}>{ukupno}</td>
                 <td>{podaci[resurs].kapacitet}</td>
               </tr>
             )

@@ -1,15 +1,18 @@
 export const vrednosti = {
   smoki: {
     min: 0,
-    max: 25
+    max: 25,
+    dobit: 20
   },
   cips: {
     min: 2,
-    max: 30
+    max: 30,
+    dobit: 30
   },
   perece: {
     min: 4,
-    max: 20
+    max: 20,
+    dobit: 13
   }
 }
 

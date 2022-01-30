@@ -4,27 +4,39 @@ import './App.css';
 import Layout from './components/Layout';
 import Navbar from './components/Navbar';
 import Tabela from './components/Tabela';
-import { masine, sirovine } from './pocetneVrednosti';
+import { masine, sirovine, vrednosti } from './pocetneVrednosti';
 
 function App() {
   const [upravljackePromenljive, setUpravljackePromenljive] = useState({
     smoki: 0,
-    cips: 2,
-    perece: 4
+    cips: 0,
+    perece: 0
   });
-
+  const [greske, setGreske] = useState({});
+  const [resenje, setResenje] = useState(0);
+  const addGreska = (resurs, ukupno, kapacitet) => {
+    setGreske(prev => {
+      return {
+        ...prev,
+        [resurs]: {
+          ukupno,
+          kapacitet
+        }
+      }
+    })
+  }
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path='/masine' element={(
           <Layout title='Ogranicenja za masine'>
-            <Tabela upravljackePromenljive={upravljackePromenljive} podaci={masine} />
+            <Tabela addGreska={addGreska} upravljackePromenljive={upravljackePromenljive} podaci={masine} />
           </Layout>
         )} />
         <Route path='/sirovine' element={(
           <Layout title='Ogranicenja za sirovine'>
-            <Tabela upravljackePromenljive={upravljackePromenljive} podaci={sirovine} />
+            <Tabela addGreska={addGreska} upravljackePromenljive={upravljackePromenljive} podaci={sirovine} />
           </Layout>
         )} />
       </Routes>
