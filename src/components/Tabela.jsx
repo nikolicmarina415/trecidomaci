@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-export default function Tabela({ podaci, upravljackePromenljive, addGreska }) {
+export default function Tabela({ podaci, upravljackePromenljive }) {
   const nizNazivaPromenljivih = Object.keys(upravljackePromenljive)
   return (
     <table className='table'>

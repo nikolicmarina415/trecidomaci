@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FunkcijaCilja({ upravljackePromenljive, vrednosti, onChange, greske }) {
+export default function FunkcijaCilja({ upravljackePromenljive, vrednosti, onChange }) {
   const naziviPromenljivih = Object.keys(upravljackePromenljive);
   return (
     <div className='container mt-3'>

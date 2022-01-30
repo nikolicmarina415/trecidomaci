@@ -1,24 +1,24 @@
 export const vrednosti = {
   smoki: {
     min: 0,
-    max: 25,
+    max: 250,
     dobit: 20
   },
   cips: {
     min: 2,
-    max: 30,
+    max: 300,
     dobit: 30
   },
   perece: {
     min: 4,
-    max: 20,
+    max: 200,
     dobit: 13
   }
 }
 
 export const masine = {
   'M1': {
-    kapacitet: 50,
+    kapacitet: 25500,
     jedinicneVrednosti: {
       smoki: 20,
       cips: 43,
@@ -26,7 +26,7 @@ export const masine = {
     }
   },
   'M2': {
-    kapacitet: 600,
+    kapacitet: 20000,
     jedinicneVrednosti: {
       smoki: 30,
       cips: 39,
@@ -36,20 +36,19 @@ export const masine = {
 }
 export const sirovine = {
   'brasno': {
-    kapacitet: 500,
+    kapacitet: 45000,
     jedinicneVrednosti: {
-      smoki: 20,
-      cips: 43,
-      perece: 31
+      smoki: 48,
+      cips: 73,
+      perece: 51
     }
   },
   'so': {
-    kapacitet: 600,
+    kapacitet: 100000,
     jedinicneVrednosti: {
-      smoki: 30,
-      cips: 39,
-      perece: 47
+      smoki: 190,
+      cips: 240,
+      perece: 150
     }
   }
 }
-
