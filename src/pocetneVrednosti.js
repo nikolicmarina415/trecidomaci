@@ -18,7 +18,7 @@ export const vrednosti = {
 
 export const masine = {
   'M1': {
-    kapacitet: 500,
+    kapacitet: 50,
     jedinicneVrednosti: {
       smoki: 20,
       cips: 43,

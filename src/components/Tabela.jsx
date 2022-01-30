@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Tabela({ podaci, upravljackePromenljive, addGreska }) {
   const nizNazivaPromenljivih = Object.keys(upravljackePromenljive)
@@ -22,10 +22,10 @@ export default function Tabela({ podaci, upravljackePromenljive, addGreska }) {
         {
           Object.keys(podaci).map(resurs => {
             const ukupno = nizNazivaPromenljivih.reduce((acc, key) => { return acc + upravljackePromenljive[key] * podaci[resurs].jedinicneVrednosti[key] }, 0)
-            addGreska(resurs, ukupno, podaci[resurs].kapacitet);
+
             return (
               <tr key={resurs}>
-                <td>{resurs}</td>
+                <th>{resurs}</th>
                 {
                   nizNazivaPromenljivih.map(promenljiva => {
                     return (
